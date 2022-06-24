@@ -7531,20 +7531,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Practice\\C_Sharp\\test-mvc-webapp\\packages": {}
+    "C:\\Users\\sarvesh.m\\Repo\\c-_mvc_api\\packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Practice\\C_Sharp\\test-mvc-webapp\\test-mvc-webapp.csproj",
+      "projectUniqueName": "C:\\Users\\sarvesh.m\\Repo\\c-_mvc_api\\test-mvc-webapp.csproj",
       "projectName": "test-mvc-webapp",
-      "projectPath": "C:\\Practice\\C_Sharp\\test-mvc-webapp\\test-mvc-webapp.csproj",
-      "packagesPath": "C:\\Practice\\C_Sharp\\test-mvc-webapp\\packages",
-      "outputPath": "C:\\Practice\\C_Sharp\\test-mvc-webapp\\obj\\",
+      "projectPath": "C:\\Users\\sarvesh.m\\Repo\\c-_mvc_api\\test-mvc-webapp.csproj",
+      "packagesPath": "C:\\Users\\sarvesh.m\\Repo\\c-_mvc_api\\packages",
+      "outputPath": "C:\\Users\\sarvesh.m\\Repo\\c-_mvc_api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Practice\\C_Sharp\\test-mvc-webapp\\NuGet.Config",
-        "C:\\Users\\mohit.b\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sarvesh.m\\Repo\\c-_mvc_api\\NuGet.Config",
+        "C:\\Users\\sarvesh.m\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7608,7 +7608,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
