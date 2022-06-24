@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prometheus.Client.MetricServer</name>
+    </assembly>
+    <members>
+        <member name="T:Prometheus.Client.MetricServer.IMetricServer">
+            <summary>
+                MetricSever
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.MetricServer.IMetricServer.Start">
+            <summary>
+                Start server
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.MetricServer.IMetricServer.Stop">
+            <summary>
+                Stop server
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.MetricServer.IMetricServer.IsRunning">
+            <summary>
+                Server is Running?
+            </summary>
+        </member>
+        <member name="T:Prometheus.Client.MetricServer.MetricServer">
+            <inheritdoc cref="T:Prometheus.Client.MetricServer.IMetricServer" />
+            <summary>
+                MetricSever based of Kestrel
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.MetricServer.MetricServer.#ctor(Prometheus.Client.MetricServer.MetricServerOptions)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="options">Http server configuration options</param>
+        </member>
+        <member name="M:Prometheus.Client.MetricServer.MetricServer.#ctor(Prometheus.Client.Collectors.Abstractions.ICollectorRegistry,Prometheus.Client.MetricServer.MetricServerOptions)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="registry">Collector registry </param>
+            <param name="options">Http server configuration options</param>
+        </member>
+        <member name="P:Prometheus.Client.MetricServer.MetricServer.IsRunning">
+            <inheritdoc />
+        </member>
+        <member name="M:Prometheus.Client.MetricServer.MetricServer.Start">
+            <inheritdoc />
+        </member>
+        <member name="M:Prometheus.Client.MetricServer.MetricServer.Stop">
+            <inheritdoc />
+        </member>
+        <member name="T:Prometheus.Client.MetricServer.MetricServerOptions">
+            <summary>
+            Metric Server Options
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.MetricServer.MetricServerOptions.Host">
+            <summary>
+            Host name
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.MetricServer.MetricServerOptions.Port">
+            <summary>
+            Port number to listen
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.MetricServer.MetricServerOptions.MapPath">
+            <summary>
+            Endpoint path
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.MetricServer.MetricServerOptions.Certificate">
+            <summary>
+            Https certificate
+            </summary>
+        </member>
+    </members>
+</doc>

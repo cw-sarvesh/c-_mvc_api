@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prometheus.Client.AspNetCore</name>
+    </assembly>
+    <members>
+        <member name="T:Prometheus.Client.AspNetCore.PrometheusExtensions">
+            <summary>
+                PrometheusExtensions
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.AspNetCore.PrometheusExtensions.UsePrometheusServer(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+                Add PrometheusServer request execution pipeline.
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.AspNetCore.PrometheusExtensions.UsePrometheusServer(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action{Prometheus.Client.AspNetCore.PrometheusOptions})">
+            <summary>
+                Add PrometheusServer request execution pipeline.
+            </summary>
+        </member>
+        <member name="T:Prometheus.Client.AspNetCore.PrometheusOptions">
+            <summary>
+                Options for Prometheus
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.AspNetCore.PrometheusOptions.MapPath">
+            <summary>
+                Url, default = "/metrics"
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.AspNetCore.PrometheusOptions.Port">
+            <summary>
+                When specified only allow access to metrics on this port, otherwise return 404, default = null.
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.AspNetCore.PrometheusOptions.CollectorRegistryInstance">
+            <summary>
+                CollectorRegistry intance
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.AspNetCore.PrometheusOptions.UseDefaultCollectors">
+            <summary>
+                Use default collectors
+            </summary>
+        </member>
+    </members>
+</doc>

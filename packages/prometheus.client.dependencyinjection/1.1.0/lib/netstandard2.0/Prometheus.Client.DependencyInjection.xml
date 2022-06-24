@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prometheus.Client.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="M:Prometheus.Client.DependencyInjection.ServiceCollectionExtensions.AddMetricFactory(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Add IMetricFactory and ICollectorRegistry into service collection
+            </summary>
+            <param name="services">Service collection</param>
+        </member>
+        <member name="M:Prometheus.Client.DependencyInjection.ServiceCollectionExtensions.AddMetricFactory(Microsoft.Extensions.DependencyInjection.IServiceCollection,Prometheus.Client.Collectors.ICollectorRegistry)">
+            <summary>
+                Add IMetricFactory and ICollectorRegistry into service collection
+            </summary>
+            <param name="services">Service collection</param>
+            <param name="collectorRegistry">Explicit collector registry to use</param>
+        </member>
+    </members>
+</doc>

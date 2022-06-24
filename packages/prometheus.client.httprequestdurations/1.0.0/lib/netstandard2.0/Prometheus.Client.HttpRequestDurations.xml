@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prometheus.Client.HttpRequestDurations</name>
+    </assembly>
+    <members>
+        <member name="T:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsMiddleware">
+            <summary>
+                Middleware for collect http responses
+            </summary>
+        </member>
+        <member name="T:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions">
+            <summary>
+                Options for RequestDurationsMiddleware
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.MetricName">
+            <summary>
+                Metric name
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.IncludeStatusCode">
+            <summary>
+                HTTP status code (200, 400, 404 etc.)
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.IncludeMethod">
+            <summary>
+                HTTP method (GET, PUT, ...)
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.IncludePath">
+            <summary>
+                URL path
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.IgnoreRoutesConcrete">
+            <summary>
+                Ignore paths
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.IgnoreRoutesContains">
+            <summary>
+                Ignore paths
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.IgnoreRoutesStartWith">
+            <summary>
+                Ignore paths
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.CollectorRegistry">
+            <summary>
+                Collector Registry
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.Buckets">
+            <summary>
+                Buckets
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.CustomLabels">
+            <summary>
+                Custom Labels
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.IncludeCustomLabels">
+            <summary>
+               Include Custom Labels
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.HttpRequestDurations.HttpRequestDurationsOptions.#ctor">
+            <summary>
+                Constructor
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AEPLCore.S3Operation</id>
+    <version>2.2.0</version>
+    <authors>AEPLCore.S3Operation</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Library for doing various operation on aws s3.</description>
+    <releaseNotes>2.2.0
+		-----------
+		Add eks support
+		2.1.0
+		-----------
+		Add dotnet 5 support
+		2.0.0
+		Add support for .net core 3.1
+		Removed support for .net core 2.0/2.1
+		--------------------------------
+		1.1.1/1.1.2
+		Log updates
+		----------------------------------
+		1.1.0
+		Updated version for logging</releaseNotes>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.1">
+        <dependency id="AEPLCore.Logging" version="3.3.0" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.Core" version="3.7.3.22" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.S3" version="3.7.3.15" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.SecurityToken" version="3.7.1.72" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.5.2">
+        <dependency id="AEPLCore.Logging" version="3.3.0" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.Core" version="3.7.3.22" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.S3" version="3.7.3.15" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.SecurityToken" version="3.7.1.72" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="AEPLCore.Logging" version="3.3.0" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.Core" version="3.7.3.22" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.S3" version="3.7.3.15" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.SecurityToken" version="3.7.1.72" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net5.0">
+        <dependency id="AEPLCore.Logging" version="3.3.0" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.Core" version="3.7.3.22" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.S3" version="3.7.3.15" exclude="Build,Analyzers" />
+        <dependency id="AWSSDK.SecurityToken" version="3.7.1.72" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

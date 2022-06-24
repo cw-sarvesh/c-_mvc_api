@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AEPLCore.DataAccess</id>
+    <version>4.3.0</version>
+    <authors>AEPLCore.DataAccess</authors>
+    <description>Refactor the code</description>
+    <releaseNotes>4.3.0
+    --------
+    Updated AEPLCore.Monitoring to 2.5.0
+    4.2.2
+    --------
+    Add support for .net 6.0
+    4.1.0
+    --------
+    Add eks support
+    4.0.0
+    ----------------------
+    Update MySqlConnector to version 1.3.8
+  3.2.0
+  -----------
+  Added support for KMS Prefix in config
+  The library will look for the file in "database" folder for the config file
+  Also the config options will get KMSBucket and KMSPrefixKey from env variables "KMS_BUCKET"
+  and "KMS_PREFIX_KEY" respectively. If it in not available in env variables it will look at config.
+
+  3.1.0
+  -----------
+  Add dotnet 5 support
+  3.0.1
+  -----------
+  updated mysql connector from 0.61.0 to 0.69.4
+  3.0.0
+  -----------
+  Add support for .net core 3.1
+  Removed support for .net core 2.1/2.0
+
+  2.3.0
+  -----------
+  Add DB Count metrics for lightweight metrics. This can be enabled for a longer time
+
+  2.2.0
+  -----------
+  Updated AEPLCore.Monitoring from 1.2.1 to 1.3.0
+
+  2.0.0
+  -----------
+  Updated mysql  MySqlConnector
+
+  1.4.0
+  -----------
+  Updated use of KMSAccessKey Section for making connection
+
+  1.3.1
+  -----------
+  Updated monitoring to 1.0.1
+
+  1.3.0
+  -----------
+  added monitoring for db calls
+
+  1.2.3
+  --------
+  Published purge invalid lib in repo
+
+  1.2.2
+  -------------
+  Fix: added namespace to ConnStrRepo class
+
+  1.2.1
+  -------------
+  Fix config reset issue, use conStr map for master and readonly also</releaseNotes>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="AEPLCore.DataAccess.Contracts" version="2.5.0" exclude="Build,Analyzers" />
+        <dependency id="AEPLCore.Utils" version="3.9.0" exclude="Build,Analyzers" />
+        <dependency id="MySqlConnector" version="1.3.8" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net5.0">
+        <dependency id="AEPLCore.DataAccess.Contracts" version="2.5.0" exclude="Build,Analyzers" />
+        <dependency id="AEPLCore.Utils" version="3.9.0" exclude="Build,Analyzers" />
+        <dependency id="MySqlConnector" version="1.3.8" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="AEPLCore.DataAccess.Contracts" version="2.5.0" exclude="Build,Analyzers" />
+        <dependency id="AEPLCore.Utils" version="3.9.0" exclude="Build,Analyzers" />
+        <dependency id="MySqlConnector" version="1.3.8" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

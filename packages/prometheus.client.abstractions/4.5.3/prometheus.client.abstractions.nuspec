@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Prometheus.Client.Abstractions</id>
+    <version>4.5.3</version>
+    <authors>prom-client-net contributors</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <description>.NET client for Prometheus</description>
+    <copyright>Copyright © prom-client-net</copyright>
+    <tags>prometheus metrics</tags>
+    <repository type="git" url="https://github.com/prom-client-net/prom-client" commit="ad9ed714bf88b6b0324e65ab37db951ae0c9b8eb" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+      <group targetFramework=".NETStandard2.1" />
+    </dependencies>
+  </metadata>
+</package>

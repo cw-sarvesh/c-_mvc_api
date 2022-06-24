@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Prometheus.Client.DependencyInjection</id>
+    <version>1.1.0</version>
+    <authors>prom-client-net contributors</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <description>Microsoft.Extensions.DependencyInjection (IServiceCollection) support for the Prometheus.Client</description>
+    <copyright>Copyright © prom-client-net</copyright>
+    <tags>prometheus metrics</tags>
+    <repository type="git" url="https://github.com/prom-client-net/prom-client-dependencyinjection" commit="f84dcb034d3288baa0e0a3fb2b426c6011eec64a" />
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Prometheus.Client" version="[4.5.3, 5.0.0)" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Prometheus.Client" version="[4.5.3, 5.0.0)" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="Prometheus.Client" version="[4.5.3, 5.0.0)" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="Prometheus.Client" version="[4.5.3, 5.0.0)" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

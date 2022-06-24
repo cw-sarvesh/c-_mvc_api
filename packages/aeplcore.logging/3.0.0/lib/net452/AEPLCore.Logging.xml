@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AEPLCore.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:AEPLCore.Logging.StartLogUpdater">
+            <summary>
+            Class to start log level updater for .net framework
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Logging.StartLogUpdater.CallLogUpdater(System.String,System.String)">
+            <summary>
+            This method will start log level updater.
+            To be called only once.
+            </summary>
+        </member>
+    </members>
+</doc>

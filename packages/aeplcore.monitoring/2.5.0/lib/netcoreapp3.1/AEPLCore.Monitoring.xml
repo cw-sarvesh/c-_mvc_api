@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AEPLCore.Monitoring</name>
+    </assembly>
+    <members>
+        <member name="T:AEPLCore.Monitoring.MetricFactory">
+            <summary>
+            MetricFactory class is used to create differnt types of metrics
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFactory.MakeCounterAsync(System.String,System.String,System.String,System.String[])">
+            <summary>
+            Function to create a new Counter Metric.
+            It can be used to count the number of times a function or a sp is called 
+            The only functionality supported is increment
+            </summary>
+            <param name="identifier">Pass a Unique Id for every new Counter.</param>
+            <param name="name">Name of the Counter Created</param>
+            <param name="helpText"></param>
+            <param name="labels">Labels for the Counter</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFactory.MakeGaugeAsync(System.String,System.String,System.String,System.String[])">
+            <summary>
+            Function to create a new Gauge Metric.
+            It can be used to track a perticular value. Like number of objects in a queue, or number of objects in an array
+            Note that the tracking is not done on each update. It is sampled
+            The operations supported are increment, decrement and set
+            </summary>
+            <param name="identifier">Pass a Unique Id for every new Gauge.</param>
+            <param name="name">Name of the Gauge Created</param>
+            <param name="helpText"></param>
+            <param name="labels">Labels for the Gauge</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFactory.MakeHistogramAsync(System.String,System.String,System.String,System.String[])">
+            <summary>
+            Function to create a new Histogram Metric.
+            It can be used to measure latency of a function
+            The default buckets used are { 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000 } (time is measured in milliseaconds)
+            The only supported functions are Tic and Tok
+            Tic has to be called at the start of the function, and it will return the time
+            Tok has to be called before the function ends, it will take the output of the tik function as input
+            </summary>
+            <param name="identifier">Pass a Unique Id for every new Histogram.</param>
+            <param name="name">Name of the Histogram Created</param>
+            <param name="helpText"></param>
+            <param name="labels">Labels for the Histogram</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFactory.MakeHistogramAsync(System.String,System.String,System.String,System.Double[],System.String[])">
+            <summary>
+            Function to create a new Histogram Metric.
+            It can be used to measure latency of a function
+            The only supported functions are Tic and Tok
+            Tic has to be called at the start of the function, and it will return the time
+            Tok has to be called before the function ends, it will take the output of the tik function as input
+            </summary>
+            <param name="identifier">Pass a Unique Id for every new Histogram.</param>
+            <param name="name">Name of the Histogram Created</param>
+            <param name="helpText"></param>
+            <param name="buckets"></param>
+            <param name="labels">Labels for the Histogram</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFactory.MakeCounter(System.String,System.String,System.String,System.String[])">
+            <summary>
+            Function to create a new Counter Metric.
+            It can be used to count the number of times a function or a sp is called 
+            The only functionality supported is increment
+            </summary>
+            <param name="identifier">Pass a Unique Id for every new Counter.</param>
+            <param name="name">Name of the Counter Created</param>
+            <param name="helpText"></param>
+            <param name="labels">Labels for the Counter</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFactory.MakeGauge(System.String,System.String,System.String,System.String[])">
+            <summary>
+            Function to create a new Gauge Metric.
+            It can be used to track a perticular value. Like number of objects in a queue, or number of objects in an array
+            Note that the tracking is not done on each update. It is sampled
+            The operations supported are increment, decrement and set
+            </summary>
+            <param name="identifier">Pass a Unique Id for every new Gauge.</param>
+            <param name="name">Name of the Gauge Created</param>
+            <param name="helpText"></param>
+            <param name="labels">Labels for the Gauge</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFactory.MakeHistogram(System.String,System.String,System.String,System.String[])">
+            <summary>
+            Function to create a new Histogram Metric.
+            It can be used to measure latency of a function
+            The default buckets used are { 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000 } (time is measured in milliseaconds)
+            The only supported functions are Tic and Tok
+            Tic has to be called at the start of the function, and it will return the time
+            Tok has to be called before the function ends, it will take the output of the tik function as input
+            </summary>
+            <param name="identifier">Pass a Unique Id for every new Histogram.</param>
+            <param name="name">Name of the Histogram Created</param>
+            <param name="helpText"></param>
+            <param name="labels">Labels for the Histogram</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFactory.MakeHistogram(System.String,System.String,System.String,System.Double[],System.String[])">
+            <summary>
+            Function to create a new Histogram Metric.
+            It can be used to measure latency of a function
+            The only supported functions are Tic and Tok
+            Tic has to be called at the start of the function, and it will return the time
+            Tok has to be called before the function ends, it will take the output of the tik function as input
+            </summary>
+            <param name="identifier">Pass a Unique Id for every new Histogram.</param>
+            <param name="name">Name of the Histogram Created</param>
+            <param name="helpText"></param>
+            <param name="buckets"></param>
+            <param name="labels">Labels for the Histogram</param>
+        </member>
+        <member name="T:AEPLCore.Monitoring.MetricFunctions">
+            <summary>
+            MetricFunctions contails all the functions required to record events for different types of metrics
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFunctions.Tik">
+            <summary>
+            Calculates the Date-Time at which the Function is called.
+            </summary>
+            <returns>Current time </returns>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFunctions.Tok(System.DateTime,System.String,System.String[])">
+            <summary>
+            Calculates the total time taken by the function.
+            </summary>
+            <param name="startTime">The Time at which the function started.code Pass the output of Tik function.</param>
+            <param name="identifier">Id of the metric. Pass the Id of the Metric</param>
+            <param name="labels">Pass the Labels for the metric</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFunctions.Inc(System.String,System.String[])">
+            <summary>
+            Increments the metric by 1.
+            </summary>
+            <param name="identifier">Id of the metric. Pass the Id of the Metric</param>
+            <param name="labels">Pass the Labels for the metric</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFunctions.Inc(System.String,System.UInt64,System.String[])">
+            <summary>
+            Increment the metric with the value(val) given.
+            </summary>
+            <param name="identifier">Id of the metric. Pass the Id of the Metric</param>
+            <param name="val">The value by which the Metric will be incremented</param>
+            <param name="labels">Pass the Labels for the metric</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFunctions.Dec(System.String,System.String[])">
+             <summary>
+             Decrement the metric by 1.
+             </summary>
+            <param name="identifier">Id of the metric. Pass the id of the Metric</param>
+             <param name="labels">Pass the Labels for the metric</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFunctions.Dec(System.String,System.UInt64,System.String[])">
+            <summary>
+            Decrement the metric with the value(val) given.
+            </summary>
+            <param name="identifier">Id of the metric. Pass th id of the Metric</param>
+            <param name="val">The value by which the Metric will be decremented</param>
+            <param name="labels">Pass the Labels for the metric</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricFunctions.Set(System.String,System.UInt64,System.String[])">
+            <summary>
+            Set the metric with a value(val) given.
+            </summary>
+            <param name="identifier">Id of the metric. Pass the id of the Metric</param>
+            <param name="val">The value by which the Metric will be set</param>
+            <param name="labels">Pass the Labels for the metric</param>
+        </member>
+        <member name="T:AEPLCore.Monitoring.MetricsPusher">
+            <summary>
+            This class is used to push metrics to prometheus. 
+            This should be only used in case when a metrics server is not possible to create
+            A possible use case is that when metrics are to be collected from IIS. 
+            Here multiple worker processes run for the same endpoint and hence it is not possible 
+            to properly collect metrics
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricsPusher.RandomString(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="length">Length of the random string required</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricsPusher.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Starts the metric pusher
+            </summary>
+            <param name="moduleName"></param>
+            <param name="consulIP"></param>
+            <param name="metricsPusherUrl">should be used for production. The URL is http://metrics-pusher.cwsystem.in</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricsPusher.#ctor(System.String,System.String)">
+            <summary>
+            Starts the metric pusher with url http://metrics-pusher-stg.cwsystem.in
+            </summary>
+            <param name="moduleName"></param>
+            <param name="consulIP"></param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricsPusher.Run">
+            <summary>
+            Will start the metrics pusher
+            </summary>
+        </member>
+        <member name="T:AEPLCore.Monitoring.MetricsServer">
+            <summary>
+            This class helps in starting the metric server.
+            For .Net core you can call AddMonitoring function. You do not need to call this function
+            For .Net framework call the StartMetricServer fucntion and also add IMetricFunctions in dependency injection
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricsServer.StartMetricServer(System.String,System.String)">
+            <summary>
+            It starts the metric server on port 9421 with endpoint /metrics
+            This need to be called only when it is running inside a console application or a microservice
+            </summary>
+            <param name="moduleName">The name of the module</param>
+            <param name="consulIP">IP address of consul</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricsServer.StartMetricServer(System.String,System.String,System.Int32)">
+            <summary>
+            It starts the metric server on port which is taken as the input
+            This need to be called only when it is running inside a console application or a microservice
+            </summary>
+            <param name="moduleName">The name of the module</param>
+            <param name="consulIP">IP address of consul</param>
+            <param name="port">Port number</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricsServer.InitMetricUpdater(System.String,System.String)">
+             <summary>
+             This function will not start the metrics server. It will just start the metrics updater.
+             This has to be called when we run a MVC site.
+             Also an endpoint needs to be created that will flush out the metrics
+             Make sure it is something other than "metrics"
+            
+             Here is an example code
+            
+             [Route("cw-metrics")]
+             [SessionState(SessionStateBehavior.Disabled)]
+             public class MetricsController : Controller
+             {
+                 [HttpGet]
+                 public void Get()
+                 {
+                     Response.StatusCode = 200;
+                     Response.ContentType = "text/plain; charset=utf-8";
+                     using (var outputStream = Response.OutputStream)
+                     {
+                         ScrapeHandler.Process(CollectorRegistry.Instance, outputStream);
+                     }
+                 }
+             }
+            
+             </summary>
+             <param name="moduleName"></param>
+             <param name="consulIP"></param>
+        </member>
+        <member name="T:AEPLCore.Monitoring.MetricStatusUpdater">
+            <summary>
+            This class updates the status of each metric that is created in the application
+            It will query consul at regular intervals and start to log timings
+            To start logging for a particular metric go to https://operations.carwale.com/Monitoring
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricStatusUpdater.#ctor(System.String,System.String)">
+            <summary>
+            This will initialize the metrics status updater and will connect with the consul 
+            It requires consul to work properly
+            </summary>
+            <param name="consulIp">Consul IP address along with port</param>
+            <param name="moduleName"></param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricStatusUpdater.UpdateMonitoringStatus(System.String)">
+            <summary>
+            Method to update the metric status in the microservice. 
+            It also updates the flags(modified time) of consul keys of the module. 
+            </summary>
+            <param name="consulKeys">Key stored in the consul eg:(Monitoring/moduleName)</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricStatusUpdater.CheckAndUpdateConsul(AEPLCore.Monitoring.MetricVec,System.String)">
+            <summary>
+            Method to add metric in consul if doesn't exist and enable it if the metric is enabled in Global. 
+            If exist in consul, it will update the status of the metric.
+            </summary>
+            <param name="vec">Metric Vector i.e.., the metric object storead as value in the metricList</param>
+            <param name="metricName"></param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.MetricStatusUpdater.TimeCompare(AEPLCore.Monitoring.MetricVec,System.String)">
+            <summary>
+            Method to change the status of metric. If the end time is not parsed successfully, it will disable the metric.
+            </summary>
+            <param name="vec">Metric Vector i.e.., the value stored in the metricList</param>
+            <param name="sTime">endtime of the metric stored in consul</param>
+        </member>
+        <member name="M:AEPLCore.Monitoring.ServiceCollectionExtension.AddMonitoring(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String)">
+            <summary>
+            1. Starts the Metric Server on default port 9421
+            2. Add this to the startup of the project.
+            </summary>
+            <param name="services"></param>
+            <param name="consulIP"></param>
+            <param name="ModuleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Monitoring.ServiceCollectionExtension.AddMonitoring(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.Int32)">
+            <summary>
+            1. Starts the Metric Server
+            2. Add this to the startup of the project.
+            </summary>
+            <param name="services"></param>
+            <param name="consulIP"></param>
+            <param name="ModuleName"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

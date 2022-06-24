@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Prometheus.Client.HttpRequestDurations</id>
+    <version>1.0.0</version>
+    <authors>Sergey Kuznetsov</authors>
+    <owners>Sergey Kuznetsov</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/PrometheusClientNet/Prometheus.Client.HttpRequestDurations</projectUrl>
+    <iconUrl>https://image.ibb.co/k4Sc0k/prometheus.png</iconUrl>
+    <description>Metrics logging of request durations for the Prometheus.Client</description>
+    <copyright>2018 © Sergey Kuznetsov</copyright>
+    <tags>prometheus metrics</tags>
+    <repository type="git" url="https://github.com/PrometheusClientNet/Prometheus.Client.HttpRequestDurations" />
+    <dependencies>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="Microsoft.AspNetCore.Http" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="Prometheus.Client" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.AspNetCore.Http" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Prometheus.Client" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

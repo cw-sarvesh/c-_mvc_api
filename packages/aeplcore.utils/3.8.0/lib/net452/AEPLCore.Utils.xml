@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AEPLCore.Utils</name>
+    </assembly>
+    <members>
+        <member name="M:AEPLCore.Utils.Common.BuildUrlOperations.RemoveSpecialCharactersOtherThanSpace(System.String)">
+            <summary>
+            This method takes string as input and removes special characters other than spaces.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.Common.BuildUrlOperations.ReplaceSpacesWithHyphen(System.String)">
+            <summary>
+            This method takes string as input and replaces all spaces with hyphen.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AEPLCore.Utils.Common.DeepComparer`1">
+            <summary>
+            Created By Harshita Gidwani
+            Deep Comparer to compare 2 complex objects that can have primitive datatypes,
+            nested objects and IEnumerables datatypes
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.Common.DeepComparer`1.Equals(`0,`0)">
+            <summary>
+            Equals method to perform deep comparision
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.Common.DeepComparer`1.CompareIEnumerable(System.Collections.IEnumerable,System.Collections.IEnumerable)">
+            <summary>
+            Comparing datatypes of type IEnumerable
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.Common.DeepComparer`1.Compare(System.Object,System.Object)">
+            <summary>
+            Comparing primitives,nested objects and IEnumerable datatypes
+            </summary>
+        </member>
+        <member name="T:AEPLCore.Utils.CompressionUtility">
+            <summary>
+            CompressionUtility contains utility 
+            functions to de/compress serializable c# objects
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.CompressionUtility.SerializeAndCompress(System.Object)">
+            <summary>
+             this method serializes and gzip compresses an object
+            </summary>
+            <param name="inputObject"></param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:AEPLCore.Utils.CompressionUtility.DecompressAndDeserialize``1(System.Byte[])">
+            <summary>
+             this method gzip decompresses and desrializes an object
+            </summary>
+            <param name="data"></param>
+            <returns>T</returns>
+        </member>
+        <member name="M:AEPLCore.Utils.CompressionUtility.GetSizeInBytes(System.Object)">
+            <summary>
+             this method returns the size of an object in bytes
+            </summary>
+            <param name="inputObject"></param>
+            <returns>int</returns>
+        </member>
+        <member name="T:AEPLCore.Utils.DistanceCalculator">
+            <summary>
+            This utility is used to calcuate distance between 2 points(A,B) on earth
+            given their cordinates(lat, long) in degrees
+            </summary>
+        </member>
+        <member name="T:AEPLCore.Utils.ExtensionMethods">
+            <summary>
+            A class that contains commonly used extension methods
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AEPLCore.Utils.ExtensionMethods.IsNotNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            This method return true if list is not null and not empty
+            </summary>
+            <param name="listToCheck">IEnumerable variable on which check will be applied</param>
+        </member>
+        <member name="M:AEPLCore.Utils.ExtensionMethods.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            This method return true if list is either null or empty
+            </summary>
+            <param name="listToCheck">IEnumerable variable on which check will be applied</param>
+        </member>
+        <member name="T:AEPLCore.Utils.PagedList">
+            <summary>
+            A class that handles pagination of an IEnumberable
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AEPLCore.Utils.PagedList.GetPagedList``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            skipCount is total items you want to skip
+            totalCount is total items in list
+            remainingCount is total items which is equal to (totalCount - skipCount) 
+            this function  first skips skipCount items , then it take elements equal to pageSize 
+            if there is case where pageSize is greater than  skipCount than returned items will be equal to remainingCount
+            </summary>
+            <param name="list">The full list of items you would like to paginate</param>
+            <param name="pageNo">The current page number</param>
+            <param name="pageSize">The size of the page</param>
+        </member>
+        <member name="T:AEPLCore.Utils.RandomGenerator">
+            <summary>
+            This class is used to generate random numbers in a multithreaded environment
+            It uses two Random object, one global random object which is used to provide seed values second threadLocalRandom which is local to thread.
+            Reference of this approach https://devblogs.microsoft.com/pfxteam/getting-random-numbers-in-a-thread-safe-way/
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.RandomGenerator.GetRandomNumber(System.Int32)">
+            <summary>
+            Returns a random number, between range 0 and maxValue(inclusive)
+            </summary>
+            <param name="maxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.StringUtility.GetListFromString(System.String,System.Char)">
+            <summary>
+             this method takes a delimeter separated list as input and returns List
+            </summary>
+            <param name="Input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AEPLCore.Utils.FileTransfer.FileDetails">
+            <summary>
+            Entity for FTPFile Details
+            </summary>
+        </member>
+        <member name="P:AEPLCore.Utils.FileTransfer.FileDetails.Name">
+            <summary>
+            Name of FTP item in directory
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AEPLCore.Utils.FileTransfer.FileDetails.Date">
+            <summary>
+            Modified or created Date
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AEPLCore.Utils.FileTransfer.FileDetails.Type">
+            <summary>
+            Type of Item(Directory,File or Link)
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AEPLCore.Utils.FileTransfer.FileDetails.Size">
+            <summary>
+            File Size
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:AEPLCore.Utils.FileTransfer.FileType">
+            <summary>
+             Type of file system of object
+            </summary>
+        </member>
+        <member name="F:AEPLCore.Utils.FileTransfer.FileType.File">
+            <summary>
+             A file
+            </summary>
+        </member>
+        <member name="F:AEPLCore.Utils.FileTransfer.FileType.Directory">
+            <summary>
+             A directory
+            </summary>
+        </member>
+        <member name="F:AEPLCore.Utils.FileTransfer.FileType.Link">
+            <summary>
+             A symbolic link
+            </summary>
+        </member>
+        <member name="T:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer">
+            <summary>
+            File transfer 
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer.GetAllFileDetails(System.String)">
+            <summary>
+            Method to get all the file details 
+            from given path
+            </summary>
+            <param name="path">string should not contain prefix forward slash</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer.GetAllFileDetailsAsync(System.String)">
+            <summary>
+            Async Method to get all the file details 
+            from given path
+            </summary>
+            <param name="path">string should not contain prefix forward slash</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer.ReadFile(System.String,System.String)">
+            <summary>
+            Methd to Read File from SFTP file and return content
+            </summary>
+            <param name="path">path where file exist</param>
+            <param name="fileName">fileName to read</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer.ReadFileAsync(System.String,System.String)">
+             <summary>
+            Async Method to Read File from SFTP file and return content
+             </summary>
+             <param name="path">path where file exist</param>
+             <param name="fileName">fileName to read</param>
+             <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer.MoveFile(System.String,System.String,System.String)">
+            <summary>
+            Method to move file from one directory to other
+            </summary>
+            <param name="sourcePath">path for source file</param>
+            <param name="destPath">path for movng source file</param>
+            <param name="fileName">file to move></param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer.MoveFileAsync(System.String,System.String,System.String)">
+            <summary>
+            Async Method to move file from one directory to other
+            </summary>
+            <param name="sourcePath">path for source file</param>
+            <param name="destPath">path for movng source file</param>
+            <param name="fileName">file to move></param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer.RenameFile(System.String,System.String,System.String)">
+            <summary>
+            Menthod to Rename the file
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="fileName">file to rename</param>
+            <param name="newFileName">new file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FileTransfer.Interface.IFileTransfer.RenameFileAsync(System.String,System.String,System.String)">
+            <summary>
+            Async Method to Rename the file
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="fileName">file to rename</param>
+            <param name="newFileName">new file name</param>
+            <returns></returns>
+        </member>
+        <member name="T:AEPLCore.Utils.FTP.FtpHelper">
+            <summary>
+            Utility Class to access FTP files 
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialise class with ftp credentials
+            </summary>
+            <param name="serverIp">IP for ftp server (DO NOT INCLUDE ftp or ftps)</param>
+            <param name="userName">userName for accessing ftp</param>
+            <param name="password">passWord for accessing ftp</param>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.GetAllFileDetailsAsync(System.String)">
+            <summary>
+            Method to get all the file details 
+            from given directory
+            </summary>
+            <param name="path">string should not contain prefix forward slash</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.ReadFileAsync(System.String,System.String)">
+            <summary>
+            Read File from FTP file and return content
+            </summary>
+            <param name="path">directory where file exist</param>
+            <param name="fileName">fileName to read</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.RenameFileAsync(System.String,System.String,System.String)">
+            <summary>
+            Rename the file
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="fileName">file to rename</param>
+            <param name="newFileName">new file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.MoveFileAsync(System.String,System.String,System.String)">
+            <summary>
+            function to move file from one directory to other
+            </summary>
+            <param name="sourcePath">path for source file</param>
+            <param name="destPath">path for movng source file</param>
+            <param name="fileName">file to move></param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.GetAllFileDetails(System.String)">
+            <summary>
+            Method to get all the file details 
+            from given directory
+            </summary>
+            <param name="path">string should not contain prefix forward slash</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.ReadFile(System.String,System.String)">
+            <summary>
+            Read File from FTP file and return content
+            </summary>
+            <param name="path">directory where file exist</param>
+            <param name="fileName">fileName to read</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.MoveFile(System.String,System.String,System.String)">
+            <summary>
+            function to move file from one directory to other
+            </summary>
+            <param name="sourcePath">path for source file</param>
+            <param name="destPath">path for movng source file</param>
+            <param name="fileName">file to move></param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.FTP.FtpHelper.RenameFile(System.String,System.String,System.String)">
+            <summary>
+            Rename the file
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="fileName">file to rename</param>
+            <param name="newFileName">new file name</param>
+            <returns></returns>
+        </member>
+        <member name="T:AEPLCore.Utils.SFTP.SftpHelper">
+            <summary>
+            Utility class to connect to SFTP server and access files
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.SFTP.SftpHelper.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialise sftp with credentials
+            </summary>
+            <param name="serverIp">SFTP server IP</param>
+            <param name="userName">Username</param>
+            <param name="password">Password</param>
+        </member>
+        <member name="M:AEPLCore.Utils.SFTP.SftpHelper.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Initialise sftp with credentials
+            </summary>
+            <param name="serverIp">SFTP server IP</param>
+            <param name="userName">Username</param>
+            <param name="port">Port</param>
+            <param name="password">Password</param>
+        </member>
+        <member name="M:AEPLCore.Utils.SFTP.SftpHelper.#ctor(System.String,System.String,System.String,System.Boolean,System.IO.Stream)">
+            <summary>
+            Initialise sftp with credentials with private key authentication
+            </summary>
+            <param name="serverIp">SFTP server IP</param>
+            <param name="userName">UserName</param>
+            <param name="password">Password</param>
+            <param name="usePassAuth">Use password Authentication or not</param>
+            <param name="privateKey">private key</param>
+        </member>
+        <member name="M:AEPLCore.Utils.SFTP.SftpHelper.#ctor(System.String,System.Int32,System.String,System.String,System.Boolean,System.IO.Stream)">
+            <summary>
+            Initialise sftp with credentials with private key authentication
+            </summary>
+            <param name="serverIp">SFTP server IP</param>
+            <param name="userName">UserName</param>
+            <param name="password">Password</param>
+            <param name="usePassAuth">Use password Authentication or not</param>
+            <param name="privateKey">private key</param>
+            <param name="port">Port</param>
+        </member>
+        <member name="M:AEPLCore.Utils.SFTP.SftpHelper.GetAllFileDetails(System.String)">
+            <summary>
+            Method to get all the file details 
+            from given path
+            </summary>
+            <param name="path">string should not contain prefix forward slash</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.SFTP.SftpHelper.MoveFile(System.String,System.String,System.String)">
+            <summary>
+            function to move file from one directory to other
+            </summary>
+            <param name="sourcePath">path for source file</param>
+            <param name="destPath">path for movng source file</param>
+            <param name="fileName">file to move></param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.SFTP.SftpHelper.ReadFile(System.String,System.String)">
+            <summary>
+            Read from SFTP file and return content
+            </summary>
+            <param name="path">path where file exist</param>
+            <param name="fileName">fileName to read</param>
+            <returns></returns>
+        </member>
+        <member name="M:AEPLCore.Utils.SFTP.SftpHelper.RenameFile(System.String,System.String,System.String)">
+            <summary>
+            Rename the file
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="fileName">file to rename</param>
+            <param name="newFileName">new file name</param>
+            <returns></returns>
+        </member>
+        <member name="T:AEPLCore.Utils.Validation.InputValidation">
+            <summary>
+            Class implementing various validations for user inputs like email, mobile etc
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.Validation.InputValidation.IsValidEmail(System.String)">
+            <summary>
+            validate the input email address, the case included are
+            should accept only -, _, . as special character
+            there should be no consecutive special characters
+            the local part and domain name in email address should start and end with any special character
+            Written By : Rayees Kausar on 09/09/2019
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.Validation.InputValidation.IsValidMobile(System.String)">
+            <summary>
+            validate the input mobile number, the case included are
+            should accept only digits
+            input string length should be equal to 10
+            mobile number should start with grater than and equal to 6
+            </summary>
+        </member>
+        <member name="T:AEPLCore.Utils.JsonHelper.Deserializer`1">
+            <summary>
+            Returns deserialized object from stream
+            Reference: https://stackify.com/improved-performance-using-json-streaming/
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AEPLCore.Utils.ReCaptcha.ReCaptchaValidator.IsAuthorizedRecaptchaV3Async(System.String,System.String)">
+            <summary>
+             This method is used to fetch recaptcha
+             score for each token and common secret key.
+            </summary>
+        </member>
+        <member name="T:AEPLCore.Utils.UrlShortener.DynamicLinkInfo">
+            <summary>
+            class for dynamic link info request for firebase api
+            </summary>
+        </member>
+        <member name="T:AEPLCore.Utils.UrlShortener.FireBaseApi">
+            <summary>
+            class to store fireBase api key
+            </summary>
+        </member>
+        <member name="T:AEPLCore.Utils.UrlShortener.UrlShortnerResponse">
+            <summary>
+            class for firebase api url shortner response
+            </summary>
+        </member>
+        <member name="M:AEPLCore.Utils.UrlShortener.UrlShortenerService.GetShortUrl(System.String,System.String)">
+            <summary>
+            this method gives short url for long url using firebase api
+            domainUriPrefix and longUrl are compulsory to use this method
+            to use this method in netcoreapp2.0 please add FireBaseApiKey in appSettings.json and
+            add fireBaseApikey in startup.cs
+            for netframework project add FireBaseApiKey in web.config
+            </summary>
+            <param name="domainUriPrefix"></param>
+            <param name="longUrl"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

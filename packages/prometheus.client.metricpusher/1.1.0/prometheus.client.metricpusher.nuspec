@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Prometheus.Client.MetricPusher</id>
+    <version>1.1.0</version>
+    <authors>Sergey Kuznetsov</authors>
+    <owners>Sergey Kuznetsov</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/PrometheusClientNet/Prometheus.Client.MetricPusher</projectUrl>
+    <description>Push metrics to a PushGateaway for the Prometheus.Client</description>
+    <copyright>2019 © Sergey Kuznetsov</copyright>
+    <tags>prometheus metrics</tags>
+    <repository type="git" url="https://github.com/PrometheusClientNet/Prometheus.Client.MetricPusher" />
+    <dependencies>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="Prometheus.Client" version="[3.1.0, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Text.RegularExpressions" version="4.3.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp2.2">
+        <dependency id="Prometheus.Client" version="[3.1.0, 4.0.0)" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Prometheus.Client" version="[3.1.0, 4.0.0)" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Prometheus.Client" version="[3.1.0, 4.0.0)" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

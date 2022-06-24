@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prometheus.Client.MetricPusher</name>
+    </assembly>
+    <members>
+        <member name="T:Prometheus.Client.MetricPusher.IMetricPusher">
+            <summary>
+                Service for Push Gateway
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.MetricPusher.IMetricPusher.PushAsync">
+            <summary>
+                Push metrics to single pushgateway endpoint
+            </summary>
+        </member>
+        <member name="P:Prometheus.Client.MetricPusher.IMetricPushServer.IsRunning">
+            <summary>
+                Server is Running?
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.MetricPusher.IMetricPushServer.Start">
+            <summary>
+                Start Metric Push Server
+            </summary>
+        </member>
+        <member name="M:Prometheus.Client.MetricPusher.IMetricPushServer.Stop">
+            <summary>
+                Stop Metric Push Server
+            </summary>
+        </member>
+    </members>
+</doc>
